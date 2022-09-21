@@ -19,13 +19,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let storedName = UserDefaults.standard.object(forKey: "name")
+        let storedBirthday = UserDefaults.standard.object(forKey: "birthday")
+        
+        if let myName = storedName as? String {
+             NameLabel.text = myName
+        if let myBirthday = storedBirthday as? String {
+            birthdayLabel.text = myBirthday
+            }
+            
+            
+        }
+        
     }
 
 
     @IBAction func ButtonClicked(_ sender: Any) {
         
+        //keeping data
+        UserDefaults.standard.set(UserNameText.text!, forKey: "name")
+        UserDefaults.standard.set(birthdayText.text!, forKey: "birthday")
         
-        birthdayLabel.text! = "Name: \(UserNameText.text!)"
+        NameLabel.text! = "Name: \(UserNameText.text!)"
         birthdayLabel.text! = "Birthday: \( birthdayLabel.text!)"
     }
 }
