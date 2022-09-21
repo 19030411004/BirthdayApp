@@ -18,11 +18,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var birthdayLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
     @IBAction func ButtonClicked(_ sender: Any) {
+        
+        
+        birthdayLabel.text! = "Name: \(UserNameText.text!)"
+        birthdayLabel.text! = "Birthday: \( birthdayLabel.text!)"
     }
 }
 
